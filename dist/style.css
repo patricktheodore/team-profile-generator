@@ -1,0 +1,56 @@
+:root {
+    --dark: #343a40;
+    --light: #e3e8ec;
+    --primary: #5d666b;
+    --secondary: #ececec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: lighter;
+  }
+
+.card-header {
+    color: var(--light);
+    background-color: var(--dark);
+}
+
+.member-list {
+    background-color: white;
+    padding: 0.2rem;
+    border: solid 1px black;
+    border-radius: 4px;
+    box-shadow: 0 0 2px black;
+}
+
+.member-list li {
+    list-style: none;
+    padding: 0.2rem;
+    margin: solid 1px black;
+}
+
+.team-member-card {
+    margin-bottom: 2rem;
+    border: solid 1px black;
+    border-radius: 4px;
+    box-shadow: 0 0 5px black;
+}
+
+.member-title {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.member-card-body {
+    background-color: var(--light);
+}
