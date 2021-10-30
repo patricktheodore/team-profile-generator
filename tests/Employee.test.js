@@ -5,7 +5,7 @@ const Employee = require('../lib/Employee');
 // 3. define a source of truth
 // 4. executre and compare
 
-function createEmployee(name="Patrick", id="8", email="patrick@email.com") {
+function createEmployee(name="Patrick", id=8, email="patrick@email.com") {
     return new Employee (name, id, email);
 }
 
@@ -61,12 +61,25 @@ describe('test employee class', () => {
         expect(result.getRole()).toBe(role);
     });
 
-    it('can only accept string "name"', () => {
+    it('should only accept string for name', () => {
+        const name = "patrick"
+        const result = createEmployee(name);
         
-        const makeEmployee = () => {
-             return new Employee(123);
-        }
+        expect(typeof name).toBe("string");
+    });
+
+    it('should only accept number for id', () => {
+        const id = 8
+        const result = createEmployee('patrick', id);
         
-        expect(makeEmployee).toThrow(Error);
-    })
+        expect(typeof id).toBe("number");
+    });
+
+    it('should only accept string for email', () => {
+        const email = "patrick@gmail.com"
+        const result = createEmployee('patrick', 1, email);
+        
+        expect(typeof email).toBe("string");
+    });
 });
+
