@@ -11,9 +11,17 @@ function commonQuestions(role="manager"){
             message: `What is the ${role}'s id?`
         },
         {
-            name: 'email',
             type: 'input',
-            message: `What is the ${role}'s email?`
+            message: `What is the ${role}'s email address?`,
+            name: 'email',
+            validate: function (userInput) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (re.test(String(userInput).toLowerCase())) {
+                    return true
+                } else {
+                    return ('Please enter a valid email!');
+                };
+            }
         },
     ]
 }
@@ -32,16 +40,25 @@ const internQuestions = [
     {
         name: 'school',
         type: 'input',
-        message: 'What is the schhol name?'
+        message: 'What is the school name?'
     },
 ];
 
 const engineerQuestions = [
     ...commonQuestions('Engineer'),
     {
-        name: 'github',
         type: 'input',
-        message: 'What is the engineers github?'
+        message: 'What is your github username?',
+        name: 'github',
+        validate: function (userInput) {
+            return axios.get(`https://api.github.com/users/${userInput}`)
+                .then(res => {
+                    return true
+                })
+                .catch(err => {
+                    return ('please enter a valid github username account');
+                });
+        }
     },
 ];
 
@@ -57,7 +74,7 @@ const confirmNewEmployee = [
 const confirmNewEmployeeType = [
     {
         type: 'list',
-        name: 'employeeType',
+        name: 'role',
         message: 'which type employee of employee would you like to add?',
         choices: [
             'manager',
