@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,23 +25,11 @@
     <main class="container-fluid">
         
         <div class="row justify-content-center align-items-start">
-            <div class="col-sm-12 col-md-6 col-lg-3 portfolio-content">
-                <div class="card h-100 team-member-card">
-                    <div class="card-header member-name">Patrick</div>
-                    <div class="card-body member-card-body">
-                        <h5 class="card-title member-title">Manager</h5>
-                        <ul class="member-list">
-                            <li>ID: 08</li>
-                            <li>GitHub: patricktheodore</li>
-                            <li>Email: patricktheodoresara@gmail.com</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
     </main>
 
 </body>
 
-</html>
+</html>`

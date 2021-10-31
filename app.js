@@ -28,7 +28,9 @@ function addAnotherEmployee() {
         if (answer.newEmployee) {
             promptEmployeeType();
         } else {
-            //render html - todo 
+            //render html - todo
+            console.log('Finished adding Emplyees, generating your team profile now...');
+            console.log(employees);
             renderTeam(employees);
         }
     })
