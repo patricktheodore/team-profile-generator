@@ -1,6 +1,6 @@
 :root {
     --dark: #343a40;
-    --light: #e3e8ec;
+    --light: #fffffff5;
     --primary: #5d666b;
     --secondary: #ececec;
 }
@@ -15,47 +15,50 @@
     font-weight: lighter;
   }
 
+  body {
+      background-color: var(--secondary);
+  }
+
   .custom-nav {
       margin-bottom: 2rem;
   }
 
 .card-header {
-    color: var(--light);
-    background-color: var(--dark);
-
+    color: var(--dark);
+    background-color: var(--light);
+    min-height: 12rem;
 }
 
 .member-list {
-    background-color: white;
-    padding: 0.2rem;
-    border: solid 1px black;
-    border-radius: 4px;
-    box-shadow: 0 0 2px black;
+    padding: 2rem 0; 
 }
 
 .member-list li {
     list-style: none;
-    padding: 0.2rem;
-    margin: solid 1px black;
+    padding: 0.5rem 0;
 }
 
 .team-member-card {
     margin-bottom: 2rem;
-    border: solid 1px black;
     border-radius: 4px;
     box-shadow: 0 0 5px black;
 }
 
+.member-name,
 .member-title {
-    font-size: 1.2rem;
-    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: lighter;
 }
 
-.member-name {
-    font-size: 1.5rem;
-    font-weight: bolder;
+.member-title {
+    font-size: 1.2rem;
 }
 
 .member-card-body {
     background-color: var(--light);
+}
+
+.custom-card-header {
+    margin: 0;
+    padding: 2rem 1rem;
 }

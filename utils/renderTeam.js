@@ -63,55 +63,73 @@ function renderTeam(data) {
 }
 
 const renderManager = manager => {
-    const employee = `<div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card h-100 team-member-card">
-            <div class="card-header member-name">${manager.name}</div>
-            <div class="card-body member-card-body">
+    const employee = `<div class="col-sm-12 col-md-5 col-lg-3 member-card">
+    <div class="card h-100 team-member-card">
+        <div class="card-header row custom-card-header align-items-center justify-content-evenly">
+            <div class="col-9 member-name">${manager.name}
                 <h5 class="card-title member-title">${manager.getRole()}</h5>
-                <ul class="member-list">
-                    <li>${manager.id}</li>
-                    <li>${manager.email}</li>
-                    <li>${manager.officeNumber}</li>
-                </ul>
+            </div>
+            <div class="col-3 member-icon">
+                <i class="fas fa-bullhorn fa-3x"></i>
             </div>
         </div>
-    </div>`
+        <div class="card-body member-card-body">
+            <ul class="member-list">
+                <li><strong>Manager ID: </strong>${manager.id}</li>
+                <li><strong>Email: </strong>${manager.email}</li>
+                <li><strong>Office Number: </strong>${manager.officeNumber}</li>
+            </ul>
+        </div>
+    </div>
+</div>`
 
     team.push(employee)
 }
 
 const renderEnginner = engineer => {
-    const employee = `<div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card h-100 team-member-card">
-            <div class="card-header member-name">${engineer.name}</div>
-            <div class="card-body member-card-body">
+    const employee = `<div class="col-sm-12 col-md-5 col-lg-3 member-card">
+    <div class="card h-100 team-member-card">
+        <div class="card-header row custom-card-header align-items-center justify-content-evenly">
+            <div class="col-9 member-name">${engineer.name}
                 <h5 class="card-title member-title">${engineer.getRole()}</h5>
-                <ul class="member-list">
-                    <li>${engineer.id}</li>
-                    <li>${engineer.email}</li>
-                    <li>${engineer.github}</li>
-                </ul>
+            </div>
+            <div class="col-3 member-icon">
+                <i class="fas fa-wrench fa-3x"></i>
             </div>
         </div>
-    </div>`
+        <div class="card-body member-card-body">
+            <ul class="member-list">
+                <li><strong>Engineer ID: </strong>${engineer.id}</li>
+                <li><strong>Email: </strong>${engineer.email}</li>
+                <li><strong>GitHub: </strong>${engineer.github}</li>
+            </ul>
+        </div>
+    </div>
+</div>`
 
     team.push(employee)
 }
 
 const renderIntern = intern => {
-    const employee = `<div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card h-100 team-member-card">
-            <div class="card-header member-name">${intern.name}</div>
-            <div class="card-body member-card-body">
+    const employee = `<div class="col-sm-12 col-md-5 col-lg-3 member-card">
+    <div class="card h-100 team-member-card">
+        <div class="card-header row custom-card-header align-items-center justify-content-evenly">
+            <div class="col-9 member-name">${intern.name}
                 <h5 class="card-title member-title">${intern.getRole()}</h5>
-                <ul class="member-list">
-                    <li>${intern.id}</li>
-                    <li>${intern.email}</li>
-                    <li>${intern.school}</li>
-                </ul>
+            </div>
+            <div class="col-3 member-icon">
+                <i class="fas fa-clipboard-check fa-3x"></i>
             </div>
         </div>
-    </div>`
+        <div class="card-body member-card-body">
+            <ul class="member-list">
+                <li><strong>Intern ID: </strong>${intern.id}</li>
+                <li><strong>Email: </strong>${intern.email}</li>
+                <li><strong>School: </strong>${intern.school}</li>
+            </ul>
+        </div>
+    </div>
+</div>`
 
     team.push(employee)
 }
