@@ -7,8 +7,17 @@ const renderTeam = require('./utils/renderTeam');
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const chalk = require('chalk');
 
 let employees = [];
+let company;
+
+function startPrompt() {
+    return inquirer.prompt(questions.startPrompt).then((answer) => {
+        company = answer.company;
+        managerQuestions();
+    })
+}
 
 function managerQuestions() {
     return inquirer.prompt(questions.managerQuestion).then((answer) => {
@@ -23,8 +32,8 @@ function addAnotherEmployee() {
         if (answer.newEmployee) {
             promptEmployeeType();
         } else {
-            console.log('Finished adding Emplyees, generating your team profile now...');  
-            let html = renderTeam(employees);
+            console.log(chalk.greenBright('Finished adding Employees, generating your team profile now...'));  
+            let html = renderTeam(company, employees);
             buildTeam(html)
             return;
         }
@@ -61,13 +70,13 @@ function internQuestions() {
 
 function buildTeam(data) {
     //render the team to a file
-    fs.writeFile("./dist/team.html", data, (err) => err ? console.log(err) : console.log('Team Profile file sucessfully written'));
+    fs.writeFile("./dist/team.html", data, (err) => err ? console.log(chalk.redBright(err)) : console.log(chalk.greenBright('Team Profile file sucessfully written')));
 }
 
 
 function init() {
-    managerQuestions();
+    console.log(chalk.greenBright('Welcome to Team Profile Generator! Please follow the prompts to generate a profile cards for your team members.'));
+    startPrompt();
 }
-
 
 init();

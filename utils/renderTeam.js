@@ -1,7 +1,9 @@
 //for each role, do a seperate function 
 const team = [];
 
-function renderTeam(data) {
+function renderTeam(name, data) {
+
+    const company = name
 
     const managers = data.filter(function (employees) {
         if (employees.getRole() === 'Manager') {
@@ -43,8 +45,8 @@ function renderTeam(data) {
     
         <header class="sticky-top">
             <nav class="navbar navbar-expand-lg sitcky-top navbar-dark bg-dark custom-nav">
-                <div class="container-fluid">
-                    <a class="navbar-brand custom-brand" href="./index.html">teamname.</a>
+                <div class="container-fluid justify-content-center">
+                    <a class="navbar-brand custom-brand" href="./team.html">${company} - Team Members</a>
                 </div>
             </nav>
         </header>
@@ -76,7 +78,7 @@ const renderManager = manager => {
         <div class="card-body member-card-body">
             <ul class="member-list">
                 <li><strong>Manager ID: </strong>${manager.id}</li>
-                <li><strong>Email: </strong>${manager.email}</li>
+                <li><strong>Email: </strong><a href="mailto:${manager.email}">${manager.email}</a></li>
                 <li><strong>Office Number: </strong>${manager.officeNumber}</li>
             </ul>
         </div>
@@ -100,8 +102,8 @@ const renderEnginner = engineer => {
         <div class="card-body member-card-body">
             <ul class="member-list">
                 <li><strong>Engineer ID: </strong>${engineer.id}</li>
-                <li><strong>Email: </strong>${engineer.email}</li>
-                <li><strong>GitHub: </strong>${engineer.github}</li>
+                <li><strong>Email: </strong><a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                <li><strong>GitHub: </strong><a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>     
             </ul>
         </div>
     </div>
@@ -124,7 +126,7 @@ const renderIntern = intern => {
         <div class="card-body member-card-body">
             <ul class="member-list">
                 <li><strong>Intern ID: </strong>${intern.id}</li>
-                <li><strong>Email: </strong>${intern.email}</li>
+                <li><strong>Email: </strong><a href="mailto:${intern.email}">${intern.email}</a></li>            
                 <li><strong>School: </strong>${intern.school}</li>
             </ul>
         </div>

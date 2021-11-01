@@ -1,11 +1,20 @@
 const axios = require('axios');
+const chalk = require('chalk');
+
+const startPrompt = [
+    {
+        name: 'company',
+        type: 'input',
+        message: 'What is the name of your company?'
+    },
+];
 
 function commonQuestions(role="manager"){
     return [
         {
             name: 'name',
             type: 'input',
-            message: `What is the ${role}'s name?`
+            message: `What is the ${role}'s name? (Full Name, or just First Name. Your Choice :) )`
         },
         {
             name: 'id',
@@ -21,7 +30,7 @@ function commonQuestions(role="manager"){
                 if (re.test(String(userInput).toLowerCase())) {
                     return true
                 } else {
-                    return ('Please enter a valid email!');
+                    return chalk.redBright('Please enter a valid email!');
                 };
             }
         },
@@ -33,7 +42,7 @@ const managerQuestion = [
     {
         name: 'officeNumber',
         type: 'input',
-        message: 'What is the managers office number?'
+        message: 'What is the managers office or branch number/id?'
     },
 ];
 
@@ -42,7 +51,7 @@ const internQuestions = [
     {
         name: 'school',
         type: 'input',
-        message: 'What is the school name?'
+        message: 'What School/Education Institution is the intern from?'
     },
 ];
 
@@ -50,7 +59,7 @@ const engineerQuestions = [
     ...commonQuestions('Engineer'),
     {
         type: 'input',
-        message: 'What is your github username?',
+        message: 'What is the engineers github username? (Please be exact as it will be validated)',
         name: 'github',
         validate: function (userInput) {
             return axios.get(`https://api.github.com/users/${userInput}`)
@@ -58,7 +67,7 @@ const engineerQuestions = [
                     return true
                 })
                 .catch(err => {
-                    return ('please enter a valid github username account');
+                    return chalk.redBright('Please enter a valid github username account!');
                 });
         }
     },
@@ -68,7 +77,7 @@ const confirmNewEmployee = [
     {
         type: 'confirm',
         name: 'newEmployee',
-        message: 'Do you want to add another employee?',
+        message: 'Do you want to add another team member?',
         default: 'true',
     }
 ];
@@ -77,7 +86,7 @@ const confirmNewEmployeeType = [
     {
         type: 'list',
         name: 'role',
-        message: 'which type employee of employee would you like to add?',
+        message: 'What is this team members role?',
         choices: [
             'manager',
             'engineer',
@@ -92,5 +101,6 @@ module.exports = {
     internQuestions,
     engineerQuestions,
     confirmNewEmployee,
-    confirmNewEmployeeType
+    confirmNewEmployeeType,
+    startPrompt
 }
