@@ -15,9 +15,14 @@
     font-weight: lighter;
   }
 
+  .custom-nav {
+      margin-bottom: 2rem;
+  }
+
 .card-header {
     color: var(--light);
     background-color: var(--dark);
+
 }
 
 .member-list {

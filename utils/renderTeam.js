@@ -1,49 +1,69 @@
 //for each role, do a seperate function 
-
-const team = []; 
-
+const team = [];
 
 function renderTeam(data) {
 
-const managers = data.filter(function(employees) {
-    if(employees.getRole() === 'Manager') {
-        return true
-    }
-});
+    const managers = data.filter(function (employees) {
+        if (employees.getRole() === 'Manager') {
+            return true
+        }
+    });
 
-const interns = data.filter(function(employees) {
-    if(employees.getRole() === 'Intern') {
-        return true
-    }
-});
+    const interns = data.filter(function (employees) {
+        if (employees.getRole() === 'Intern') {
+            return true
+        }
+    });
 
-const engineers = data.filter(function(employees) {
-    if(employees.getRole() === 'Engineer') {
-        return true
-    }
-});
+    const engineers = data.filter(function (employees) {
+        if (employees.getRole() === 'Engineer') {
+            return true
+        }
+    });
 
-console.log(managers);
-console.log(interns);
-console.log(engineers);
+    managers.map(manager => renderManager(manager));
+    engineers.map(enginner => renderEnginner(enginner));
+    interns.map(intern => renderIntern(intern));
 
-managers.map(manager => renderManager(manager));
-engineers.map(enginner => renderEnginner(enginner));
-interns.map(intern => renderIntern(intern));
-
-console.log(team);
+    return `<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>team-profile</title>
+        <script src="https://kit.fontawesome.com/c1b942df5a.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    
+    <body>
+    
+        <header class="sticky-top">
+            <nav class="navbar navbar-expand-lg sitcky-top navbar-dark bg-dark custom-nav">
+                <div class="container-fluid">
+                    <a class="navbar-brand custom-brand" href="./index.html">teamname.</a>
+                </div>
+            </nav>
+        </header>
+    
+        <main class="container-fluid">
+            
+            <div class="row justify-content-center align-items-start">
+                ${team}
+            </div>
+    
+        </main>
+    
+    </body>
+    
+    </html>`
 }
 
-
-
-
-
-
-
-
-const renderManager = manager => { 
-    const employee = `<div class="row justify-content-center align-items-start">
-    <div class="col-sm-12 col-md-6 col-lg-3 portfolio-content">
+const renderManager = manager => {
+    const employee = `<div class="col-sm-12 col-md-6 col-lg-3">
         <div class="card h-100 team-member-card">
             <div class="card-header member-name">${manager.name}</div>
             <div class="card-body member-card-body">
@@ -55,15 +75,13 @@ const renderManager = manager => {
                 </ul>
             </div>
         </div>
-    </div>
     </div>`
-    
+
     team.push(employee)
 }
 
 const renderEnginner = engineer => {
-    const employee = `<div class="row justify-content-center align-items-start">
-    <div class="col-sm-12 col-md-6 col-lg-3 portfolio-content">
+    const employee = `<div class="col-sm-12 col-md-6 col-lg-3">
         <div class="card h-100 team-member-card">
             <div class="card-header member-name">${engineer.name}</div>
             <div class="card-body member-card-body">
@@ -75,15 +93,13 @@ const renderEnginner = engineer => {
                 </ul>
             </div>
         </div>
-    </div>
     </div>`
-    
+
     team.push(employee)
 }
 
 const renderIntern = intern => {
-    const employee = `<div class="row justify-content-center align-items-start">
-    <div class="col-sm-12 col-md-6 col-lg-3 portfolio-content">
+    const employee = `<div class="col-sm-12 col-md-6 col-lg-3">
         <div class="card h-100 team-member-card">
             <div class="card-header member-name">${intern.name}</div>
             <div class="card-body member-card-body">
@@ -95,10 +111,10 @@ const renderIntern = intern => {
                 </ul>
             </div>
         </div>
-    </div>
     </div>`
-    
+
     team.push(employee)
 }
+
 
 module.exports = renderTeam;

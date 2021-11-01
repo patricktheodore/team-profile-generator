@@ -2,25 +2,20 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const questions = require('./utils/questions');
-const renderTeam = require('./utils/renderTeam')
+const renderTeam = require('./utils/renderTeam');
 
-const fs = require('fs');
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
+const path = require("path");
+const fs = require("fs");
 
-const employees = [];
+let employees = [];
 
-
-//get manager info. 
-
-//add employee data to employees array. 
-
-//see if user wants to add another employee
 function managerQuestions() {
- return inquirer.prompt(questions.managerQuestion).then((answer) => {
-    const addEmployee = new Manager (answer.name, answer.id, answer.email, answer.officeNumber);
-    employees.push(addEmployee);
-    addAnotherEmployee();
-});
+    return inquirer.prompt(questions.managerQuestion).then((answer) => {
+        const addEmployee = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
+        employees.push(addEmployee);
+        addAnotherEmployee();
+    });
 }
 
 function addAnotherEmployee() {
@@ -28,10 +23,10 @@ function addAnotherEmployee() {
         if (answer.newEmployee) {
             promptEmployeeType();
         } else {
-            //render html - todo
-            console.log('Finished adding Emplyees, generating your team profile now...');
-            console.log(employees);
-            renderTeam(employees);
+            console.log('Finished adding Emplyees, generating your team profile now...');  
+            let html = renderTeam(employees);
+            buildTeam(html)
+            return;
         }
     })
 }
@@ -50,22 +45,29 @@ function promptEmployeeType() {
 
 function engineerQuestions() {
     return inquirer.prompt(questions.engineerQuestions).then((answer) => {
-       const addEmployee = new Engineer (answer.name, answer.id, answer.email, answer.github);
-       employees.push(addEmployee);
-       addAnotherEmployee();
-   });
-   }
+        const addEmployee = new Engineer(answer.name, answer.id, answer.email, answer.github);
+        employees.push(addEmployee);
+        addAnotherEmployee();
+    });
+}
 
-   function internQuestions() {
+function internQuestions() {
     return inquirer.prompt(questions.internQuestions).then((answer) => {
-       const addEmployee = new Intern (answer.name, answer.id, answer.email, answer.school);
-       employees.push(addEmployee);
-       addAnotherEmployee();
-   });
-   }
+        const addEmployee = new Intern(answer.name, answer.id, answer.email, answer.school);
+        employees.push(addEmployee);
+        addAnotherEmployee();
+    });
+}
+
+function buildTeam(data) {
+    //render the team to a file
+    fs.writeFile("./dist/team.html", data, (err) => err ? console.log(err) : console.log('Team Profile file sucessfully written'));
+}
+
 
 function init() {
     managerQuestions();
 }
+
 
 init();
