@@ -5,7 +5,6 @@ const questions = require('./utils/questions');
 const renderTeam = require('./utils/renderTeam');
 
 const inquirer = require("inquirer");
-const path = require("path");
 const fs = require("fs");
 const chalk = require('chalk');
 

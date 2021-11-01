@@ -1,179 +1,139 @@
-# 10 Object-Oriented Programming: Team Profile Generator
-
-## Your Task
-
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
-
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
-
-> **Note**: There is no starter code for this assignment.
-
-## User Story
-
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-```
-
-## Mock-Up
-
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
-
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
-
-The styling in the image is just an example, so feel free to add your own.
-
-## Getting Started
-
-This homework will combine many of the skills we've covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help get started.
-
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
-
-```bash
-node index.js
-```
-
-It is recommended that you start with a directory structure that looks like the following example:
-
-```md
-.
-├── __tests__/             //jest tests
-│   ├── Employee.test.js
-│   ├── Engineer.test.js
-│   ├── Intern.test.js
-│   └── Manager.test.js
-├── dist/                  // rendered output (HTML) and CSS style sheet      
-├── lib/                   // classes
-├── src/                   // template helper code 
-├── .gitignore             // indicates which folders and files Git should ignore
-├── index.js               // runs the application
-└── package.json           
-```
-
-**Important**: Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository.
-
-The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
-
-The first class is an `Employee` parent class with the following properties and methods:
-
-* `name`
-
-* `id`
-
-* `email`
-
-* `getName()`
-
-* `getId()`
-
-* `getEmail()`
-
-* `getRole()`&mdash;returns `'Employee'`
-
-The other three classes will extend `Employee`.
-
-In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-
-* `officeNumber`
-
-* `getRole()`&mdash;overridden to return `'Manager'`
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-
-* `github`&mdash;GitHub username
-
-* `getGithub()`
-
-* `getRole()`&mdash;overridden to return `'Engineer'`
-
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`&mdash;overridden to return `'Intern'`
-
-Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Deliverables: 15%
-
-* A sample HTML file generated using the application must be submitted.
-
-* Your GitHub repository containing your application code.
-
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the functionality of the Team Profile Generator and passing tests must be submitted, and a link to the video should be included in your README file.
-
-* The walkthrough video must show all four tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-* The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
-
-* The walkthrough video must demonstrate a generated HTML file that matches the user input.
-
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-	* Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
-
-	* Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
-
-  * The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and passing tests.
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+ 
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Contributers: https://github.com/patricktheodore/team-profile-generator](https://img.shields.io/github/contributors/patricktheodore/team-profile-generator?color=brightgreen&label=Contributors)](https://github.com/patricktheodore/team-profile-generator/graphs/contributers) 
+  [![Forks: https://github.com/patricktheodore/team-profile-generator](https://img.shields.io/github/forks/patricktheodore/team-profile-generator?color=blue&label=Forks)](https://github.com/patricktheodore/team-profile-generator/network/members) 
+  [![Stars: https://github.com/patricktheodore/team-profile-generator](https://img.shields.io/github/stars/patricktheodore/team-profile-generator?color=blueviolet&label=Stars)](https://github.com/patricktheodore/team-profile-generator/stargazers)
+  [![Issues: https://github.com/patricktheodore/team-profile-generator](https://img.shields.io/github/issues/patricktheodore/team-profile-generator?color=red&label=Issues)](https://github.com/patricktheodore/team-profile-generator/issues)
+
+  <h1 align="center">Team Profile Generator</h3>
+  
+  <div>
+    <p align="center">
+      team-profile-generator is a CLI that prompts the user for information about employees within a company, and then generates a profile for each employee and displays them neatly in an HTML file. 
+      <br />
+      <a href="https://github.com/patricktheodore/team-profile-generator"><strong>Explore the docs »</strong></a>
+      <br />
+      <br />
+      <a href="https://github.com/patricktheodore/team-profile-generator">View Demo</a>
+      ·
+      <a href="https://github.com/patricktheodore/team-profile-generator/issues">Report Bug</a>
+      ·
+      <a href="https://github.com/patricktheodore/team-profile-generator/issues">Request Feature</a>
+    </p>
+  </div>
+
+  <br />
+  <br />
+  
+  <!-- TABLE OF CONTENTS -->
+  <details>
+    <summary>Table of Contents</summary>
+    <ul>
+      <li>
+        <a href="#about-the-project">About The Project</a>
+        <ul>
+          <li><a href="#built-with">Built With</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#getting-started">Getting Started</a>
+        <ul>
+          <li><a href="#prerequisites">Prerequisites</a></li>
+          <li><a href="#installation">Installation</a></li>
+        </ul>
+      </li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#license">License</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#acknowledgments">Acknowledgments</a></li>
+    </ul>
+  </details>
+
+  <br />
+  <br />
+  
+  
+  
+  <!-- ABOUT THE PROJECT -->
+  # About The Project
+  team-profile-generator utilises inquirer to prompt the user for information regarding employees within a company. The user can select from Manager, Engineers or Interns, and add information like email, github usernames, company id numbers and others. The application will then collate this information into an easily readable format and render them in a stylish html document ready for viewing.
+
+  
+  ## Built With
+  node.js, inquirer, jest, chalk, fontawesome, axios
+
+
+  
+  
+  <!-- GETTING STARTED -->
+  <br />
+
+  # Getting Started
+
+  
+  ## Prerequisites
+  axios, node, chalk, inquirer, jest
+  
+  ## Installation
+  * Fork this repo
+  * run <code>npm install</code> from your terminal or whichever command line application you use.
+  * run <code>npm init</code> and <code>npm install</code> to make sure the latest versions are installed and running. 
+  * Then run <code>node app.js</code> to start the application.
+
+  
+  <!-- USAGE EXAMPLES -->
+  # Usage
+  * Follow the prompted questions and answer as best as possible. 
+  * If certain values are unknown they can be left blank. 
+  * Once all team members have been added, a html file will be generated inside the <code>'dist'</code> directory
+  
+  
+  <!-- CONTRIBUTING -->
+  # Contributing
+  Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+    
+  If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+    
+    * Fork the Project
+    * Create your Feature Branch (git checkout -b feature/AmazingFeature)
+    * Commit your Changes (git commit -m 'Add some AmazingFeature')
+    * Push to the Branch (git push origin feature/AmazingFeature)
+    * Open a Pull Request
+  
+  
+  <!-- LICENSE -->
+  # License
+  Distributed under the MIT. Please see for https://opensource.org/licenses/MIT more details. 
+
+  
+  <!-- TEST -->
+  # Tests
+  	All tests passed Monday 1 Nov 2021
+	PASS  tests/Intern.test.js
+ 	PASS  tests/Engineer.test.js
+ 	PASS  tests/Employee.test.js
+ 	PASS  tests/Manager.test.js
+
+	Test Suites: 4 passed, 4 total
+	Tests:       26 passed, 26 total
+	Snapshots:   0 total
+	Time:        0.478 s, estimated 1 s
+  
+  
+  <!-- QUESTIONS & CONTACT -->
+  # Questions & Contact Info
+  Find my github profile at: https://github.com/patricktheodore </br>
+  Browse the repo: https://github.com/patricktheodore/team-profile-generator </br>
+  Get in contact via email: patricktheodoresara@gmail.com 
+  </br></br>
+  My preferred methods of communication are: email, github
+  
+  
+  <!-- ACKNOWLEDGMENTS -->
+  # Acknowledgments
+
+	
+  Readme created with https://github.com/patricktheodore/perfect-readme-generator
+  
+  <p align="right">(<a href="#top">back to top</a>)</p>  
