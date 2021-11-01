@@ -26,7 +26,6 @@
 .card-header {
     color: var(--dark);
     background-color: var(--light);
-    min-height: 12rem;
 }
 
 .member-list {
@@ -61,4 +60,5 @@
 .custom-card-header {
     margin: 0;
     padding: 2rem 1rem;
+    border: none;
 }
