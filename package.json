@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/patricktheodore/team-profile-generator#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "inquirer": "^8.2.0",
     "jest": "^27.3.1"
   }
 }
-
