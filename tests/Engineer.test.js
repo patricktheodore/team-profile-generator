@@ -31,12 +31,4 @@ describe('test engineer class', () => {
 
         expect(result.getRole()).toBe(role);
     })
-
-    it('should only accept string for github user', () => {
-        const github = 'patricktheodore';
-        const result = createEngineer('patrick', 8, 'patrick@gmail.com', github);
-
-        expect(typeof github).toBe('string');
-    })
-
 })

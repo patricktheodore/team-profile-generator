@@ -23,13 +23,6 @@ describe('test the intern class', () => {
         expect(result.getSchool()).toBe(school);
     })
 
-    it('should only accept string value for school', () => {
-        const school = 'uwa';
-        const result = createIntern('patrick', 1, 'patrick@email.com', school);
-
-        expect(typeof school).toBe('string');
-    })
-
     it('should return intern when getRole is called', () => {
         const role = 'Intern';
         const result = createIntern();

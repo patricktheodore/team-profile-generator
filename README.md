@@ -57,7 +57,7 @@
   
   <!-- ABOUT THE PROJECT -->
   # About The Project
-  team-profile-generator utilises inquirer to prompt the user for information regarding employees within a company. The user can select from Manager, Engineers or Interns, and add information like email, github usernames, company id numbers and others. The application will then collate this information into an easily readable format and render them in a stylish html document ready for viewing.
+  team-profile-generator utilises inquirer to prompt the user for information regarding employees within a company. The user can select from Manager, Engineers or Interns, and add information like email, github usernames, company id numbers and others. The application will then collate this information into an easily readable format and render them in a stylish html document ready for viewing. Live links for github profiles will be created, as well as links for emails that will open the users default email application. 
 
   
   ## Built With
@@ -73,12 +73,12 @@
 
   
   ## Prerequisites
-  axios, node, chalk, inquirer, jest
+  Node
   
   ## Installation
   * Fork this repo
-  * run <code>npm install</code> from your terminal or whichever command line application you use.
-  * run <code>npm init</code> and <code>npm install</code> to make sure the latest versions are installed and running. 
+  * Run <code>npm install</code> from your terminal or whichever command line application you use.
+  * Run <code>npm init</code> and <code>npm install</code> to make sure the latest versions are installed and running. 
   * Then run <code>node app.js</code> to start the application.
 
   
@@ -133,7 +133,7 @@
   <!-- ACKNOWLEDGMENTS -->
   # Acknowledgments
 
-	
+
   Readme created with https://github.com/patricktheodore/perfect-readme-generator
   
   <p align="right">(<a href="#top">back to top</a>)</p>  

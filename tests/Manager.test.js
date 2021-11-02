@@ -23,13 +23,6 @@ describe('test the manager class', () => {
         expect(result.getOfficeNumber()).toBe(officeNumber);
     })
 
-    it('should only accept number for officeNumber', () => {
-        const officeNumber = 1
-        const result = createManager('patrick', 8, 'patrick@email.com', officeNumber);
-        
-        expect(typeof officeNumber).toBe("number");
-    });
-
     it('should return manager when getRole() is called', () => {
         const role = "Manager";
         const result = createManager();

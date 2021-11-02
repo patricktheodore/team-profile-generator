@@ -60,26 +60,5 @@ describe('test employee class', () => {
 
         expect(result.getRole()).toBe(role);
     });
-
-    it('should only accept string for name', () => {
-        const name = "patrick"
-        const result = createEmployee(name);
-        
-        expect(typeof name).toBe("string");
-    });
-
-    it('should only accept number for id', () => {
-        const id = 8
-        const result = createEmployee('patrick', id);
-        
-        expect(typeof id).toBe("number");
-    });
-
-    it('should only accept string for email', () => {
-        const email = "patrick@gmail.com"
-        const result = createEmployee('patrick', 1, email);
-        
-        expect(typeof email).toBe("string");
-    });
 });
 
