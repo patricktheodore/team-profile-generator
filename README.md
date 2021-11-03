@@ -139,7 +139,11 @@
   <!-- ACKNOWLEDGMENTS -->
   # Acknowledgments
 
-
-  Readme created with https://github.com/patricktheodore/perfect-readme-generator
+  * Inquirer
+  * Jest
+  * FontAwesome
+  * Chalk
+  
+Readme created with https://github.com/patricktheodore/perfect-readme-generator
   
   <p align="right">(<a href="#top">back to top</a>)</p>  
