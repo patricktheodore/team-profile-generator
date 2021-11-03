@@ -59,6 +59,8 @@
   # About The Project
   team-profile-generator utilises inquirer to prompt the user for information regarding employees within a company. The user can select from Manager, Engineers or Interns, and add information like email, github usernames, company id numbers and others. The application will then collate this information into an easily readable format and render them in a stylish html document ready for viewing. Live links for github profiles will be created, as well as links for emails that will open the users default email application. 
 
+<a href="https://watch.screencastify.com/v/u4SskyhsCsSwuCEzHvAf">Video Walkthrough -></a>
+
   
   ## Built With
   node.js, inquirer, jest, chalk, fontawesome, axios
@@ -109,16 +111,20 @@
   
   <!-- TEST -->
   # Tests
-  	All tests passed Monday 1 Nov 2021
-	PASS  tests/Intern.test.js
- 	PASS  tests/Engineer.test.js
- 	PASS  tests/Employee.test.js
- 	PASS  tests/Manager.test.js
+  	All tests passed Wednesday 3 Nov 2021
+	  
+      PASS  tests/Intern.test.js
+      PASS  tests/Engineer.test.js
+      PASS  tests/Employee.test.js
+      PASS  tests/Manager.test.js
 
-	Test Suites: 4 passed, 4 total
-	Tests:       26 passed, 26 total
-	Snapshots:   0 total
-	Time:        0.478 s, estimated 1 s
+      Test Suites: 4 passed, 4 total
+      Tests:       20 passed, 20 total
+      Snapshots:   0 total
+      Time:        0.42 s, estimated 1 s
+      Ran all test suites.
+
+<a href="https://watch.screencastify.com/v/ALy5tGBVPQaGWIgY6njT">Test Demo -></a>
   
   
   <!-- QUESTIONS & CONTACT -->
